@@ -1,6 +1,7 @@
-$bg: #ead2a8;
+@use 'variables';
+@use 'base';
 body {
-    background: $bg;
+    background: variables.$bg;
     font-family: Noto Serif, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -9,17 +10,12 @@ body {
     margin-top: 60px;
 }
 
-
-/** Using Variables */
-
-$primary-color:red;
 h1 {
-    $primary-color: yellow;
-    color: $primary-color;
+    color: variables.$primary;
 }
 
 p {
-    color: $primary-color;
+    color: variables.$primary;
 }
 
 .box {
