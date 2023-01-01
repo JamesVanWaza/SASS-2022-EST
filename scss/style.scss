@@ -1,0 +1,29 @@
+$bg: #ead2a8;
+body {
+    background: $bg;
+    font-family: Noto Serif, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+}
+
+
+/** Using Variables */
+
+$primary-color:red;
+h1 {
+    $primary-color: yellow;
+    color: $primary-color;
+}
+
+p {
+    color: $primary-color;
+}
+
+.box {
+    padding: 1em 2em;
+    background-color: beige;
+    color: black;
+}
