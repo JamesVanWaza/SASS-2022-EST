@@ -1,21 +1,24 @@
 @use 'variables';
 @use 'base';
+@use 'buttons';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Serif&display=swap');
 body {
     background: variables.$bg;
-    font-family: Noto Serif, Helvetica, Arial, sans-serif;
+    font-family: Montserrat, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
+    color: #152f49;
     margin-top: 60px;
 }
 
 h1 {
     color: variables.$primary;
+    font-family: 'Noto Serif', sans-serif;
 }
 
 p {
-    color: variables.$primary;
+    color: variables.$Secondary;
 }
 
 .box {
@@ -23,3 +26,52 @@ p {
     background-color: beige;
     color: black;
 }
+
+@mixin msg($col:#888) {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #888;
+    font-size: 1rem;
+    color: white;
+    padding: 1rem 1.25rem;
+    margin: 1em 0;
+    display: inline-block;
+    cursor: pointer;
+    &:hover {
+        background: #555;
+    }
+    h1 {
+        margin: 0 0 0.2em 0;
+        font-size: 2.5em;
+    }
+}
+
+.msg {
+    @include msg;
+    &-info {
+        background: #33a2a2;
+        &:hover {
+            background: #1a5353;
+        }
+    }
+}
+
+@mixin interpolationbtn($name:"",
+$bg:#444,
+$col:white) {
+    .interpolationbtn#{$name} {
+        border: 0;
+        border-radius: 5px;
+        background: $bg;
+        font-size: 1rem;
+        color: $col;
+        padding: 0.7rem 0.9rem;
+        margin: 0.5em auto;
+        display: inline-block;
+        cursor: pointer;
+    }
+}
+
+@include interpolationbtn;
+@include interpolationbtn("-primary",
+#3ab5e9);

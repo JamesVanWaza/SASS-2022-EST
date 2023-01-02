@@ -1,0 +1,58 @@
+@use 'variables';
+@mixin btn() {
+    background-color: variables.$bg;
+    &:hover {
+        text-transform: uppercase;
+        opacity: 0.5;
+        transition: transform 0.3s;
+    }
+    &:active {
+        background-color: darken(variables.$bg, 25%)
+    }
+}
+
+.btn {
+    @include btn;
+    color: variables.$bg;
+    text-decoration: none;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    font-size: 1.1em;
+    margin: 0.25rem;
+}
+
+.btn-green {
+    background-color: lightgreen;
+}
+
+.btn-blue {
+    background-color: lightblue;
+}
+
+.btn-yellow {
+    background-color: yellow;
+}
+
+.btn-red {
+    background-color: red;
+}
+
+.anotherbtn {
+    border: 0;
+    border-radius: 5px;
+    background: #444;
+    font-size: 1rem;
+    color: white;
+    padding: 0.7rem 0.9rem;
+    margin: 0.5em auto;
+    display: inline-block;
+    cursor: pointer;
+    &-primary {
+        @extend .anotherbtn;
+        background: #3ab5e9;
+    }
+    &-secondary {
+        @extend .anotherbtn;
+        background-color: orange;
+    }
+}
